@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的注册（局部）</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-text></my-text>
+        <my-text01></my-text01>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            'my-text':{
+                template:'<span>my-text</span>'
+            },
+            'my-text01':{
+                template:'<span>my-text01</span>'
+            }
+        }
+    })
+</script>
+
+</html>

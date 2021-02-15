@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <script>
+
+        // new Promise((resolve,reject)=>{
+        //     resolve("success")     
+        // }).then(data=>{
+        //     console.log(data);
+        // }).catch(err=>{
+        //     console.log(err);
+        // })
+
+        // new Promise((resolve,reject)=>{
+        //     reject('err')
+        // }).then(data=>{
+        //     console.log(data);
+        // },err=>{
+        //     console.log(err);
+        // })
+
+
+
+        // new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve('success')
+        //     }, 1000);
+        // }).then(data=>{
+        //     console.log(data);
+        //     new Promise((resolve,reject)=>{
+        //         setTimeout(() => {
+        //             resolve(data+1)
+        //         }, 1000);
+        //     }).then(data=>{
+        //         console.log(data);
+        //     })
+        // }).catch(err=>{
+        //     console.log(err);
+        // })
+
+
+
+
+        // new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve('success')
+        //     }, 1000);
+        // }).then(data=>{
+        //     console.log(data);
+        //     return Promise.resolve(data+1)
+        // }).then(data=>{
+        //     console.log(data);
+        //     return data+2
+        // }).then(data=>{
+        //     console.log(data);
+        // }).catch(err=>{
+        //     console.log(err);
+        // })
+
+
+        // promise all
+        const promise1 = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve("success")
+            }, 2000);
+        })
+        const promise2 = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve("success2")
+            }, 1000);
+        })
+
+        let arr = [promise1,promise2]
+        Promise.all(arr).then(data=>{
+            console.log('data===>',data);
+        })
+
+    </script>
+    
+</body>
+</html>
