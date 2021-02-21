@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css 定为的基础演示</title>
+  </head>
+  <body>
+    <div id="content">我是content，我要居中显示 css（除边框和内边距宽度）</div>
+    <div class="postionDiv">
+      我是被定为的元素。<br />
+      static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个
+      static 元素表示它不会被“positioned”，一个 position
+      属性被设置为其他值的元素表示它会被“positioned”。
+    </div>
+    <div class="relativeDiv">
+      我是相对定为 相当于自己，但是必须要设置 top bottom right left
+      <!-- 相对于原来的位置，下移20px -->
+      <div class="absoluteDiv">
+        绝对定为：
+        它不是相对于视窗而是相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的
+        body 元素，并且它会随着页面滚动而移动。（简单记做：子绝父相）
+      </div>
+    </div>
+    <div class="fixedDiv">固定定为：相对于浏览器窗口</div>
+  </body>
+  <style>
+    * {
+      /* 消除边框和内边距宽度 */
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    div {
+      border: 1px solid yellow;
+    }
+
+    #content {
+      text-align: center;
+      width: 300px;
+      margin: 0px auto;
+    }
+
+    .postionDiv {
+      position: static;
+    }
+
+    .relativeDiv {
+      position: relative;
+      top: 20px;
+    }
+
+    .absoluteDiv {
+      position: absolute;
+      left: 20px;
+    }
+
+    .fixedDiv {
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+    }
+  </style>
+</html>
