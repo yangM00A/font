@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex学习001</title>
+</head>
+
+<body>
+    <div class="centent">
+        <div>001</div>
+        <div>002</div>
+        <div>003</div>
+        <div>004</div>
+        <div>005</div>
+    </div>
+
+</body>
+
+<style>
+    div {
+        border: 1px solid red;
+    }
+
+    .centent>div {
+        width: 30%;
+    }
+
+    .centent {
+        width: 80%;
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>
+
+</html>
