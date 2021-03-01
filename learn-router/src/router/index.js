@@ -23,8 +23,7 @@ const New = () => import('../components/HomeNew.vue')
 Vue.use(VueRouter)
 
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     redirect: '/Home',
     meta: {
@@ -37,8 +36,7 @@ const routes = [
     meta: {
       title: '首页'
     },
-    children: [
-      {
+    children: [{
         path: '/',
         redirect: 'Message',
         meta: {
