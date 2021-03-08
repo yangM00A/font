@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-002</title>
+    <style>
+        div {
+            border: solid 2px blue;
+            height: 600px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            /* 设置主轴上元素的排列方式 */
+            /* justify-content: center; */
+            /* justify-content: flex-end; */
+            /* justify-content:space-between; */
+            justify-content: space-around;
+
+            /* 侧轴元素的排列方式(一行) */
+            /* align-items:flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+
+            /* 是否换行 */
+
+            flex-wrap: wrap;
+
+
+        }
+
+        div span {
+            height: 100px;
+            width: 400px;
+            border: solid 2px yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+
+</body>
+
+</html>
