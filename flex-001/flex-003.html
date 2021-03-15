@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-003 item选项</title>
+    <style>
+        div {
+            border: solid 2px blue;
+            height: 600px;
+            width: 100%;
+
+            /* flex 布局 */
+            display: flex;
+        }
+
+        div span {
+            height: 100px;
+            /* width: 400px; */
+            border: solid 2px yellow;
+            flex:1
+        }
+        div span:nth-child(2){
+            flex:2
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <!-- <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span> -->
+    </div>
+
+</body>
+
+</html>
