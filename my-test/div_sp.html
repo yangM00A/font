@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>div 滑动隐藏</title>
+  <script>
+    /**
+     * add(1,2)(3)    
+console.log(add)// 6
+
+add(1,2,4)(3)    
+console.log(add)// 10
+*/
+    function add(...arg) {
+      let num = 0;
+      for (const item in arg) {
+        num = num + arg[item]
+      }
+
+      return function fn(arg) {
+        for (const item in arg) {
+          num = num + arg[item]
+        }
+        add = num;
+        return fn
+      }
+    }
+
+    add(1, 2)(3)
+    console.log(add);
+
+  </script>
+  <style>
+    div {
+      position: relative;
+      text-align: center;
+
+      background-color: yellow;
+      width: 500px;
+      height: 700px;
+
+      animation-name: leftDiv;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      /* animation-iteration-count: infinite; */
+    }
+
+    @keyframes leftDiv {
+      0% {
+        left: 0px;
+      }
+
+      50% {
+        right: 250px
+      }
+
+      100% {
+        right: 500px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+    我是左侧的页面
+  </div>
+
+</body>
+
+</html>

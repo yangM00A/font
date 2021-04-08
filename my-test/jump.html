@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跳跃的圆</title>
+  <style>
+    div {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, red, green);
+
+      animation-name: animation_jump;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes animation_jump {
+      0% {
+        top: 0px;
+      }
+
+      50% {
+        top: 249px;
+        width: 130px;
+        height: 70px;
+      }
+
+      100% {
+        top: 0px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+
+  </div>
+
+</body>
+
+</html>
