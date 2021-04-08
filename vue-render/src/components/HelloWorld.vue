@@ -24,7 +24,11 @@ export default {
     };
   },
   methods: {
-    // 测试 $nextTick() 和 $refs
+    /**
+     * 描述:测试 $nextTick() 和 $refs
+     * @date 2021-04-08
+     * @returns {any}
+     */
     update() {
       let _this = this;
       this.msg = "updata vue render";
