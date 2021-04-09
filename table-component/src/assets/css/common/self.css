@@ -1,0 +1,57 @@
+/* 
+修改 element-ui 元素样式
+*/
+.el-form-item__label {
+  /* background-color: #000 !important; */
+  font-size: 13px;
+  line-height: 42px;
+  color: #000;
+}
+
+/* 图标加粗 */
+.el-icon-plus,
+.el-icon-search,
+.el-icon-delete {
+  font-weight: bold !important;
+}
+
+/* 表头字体 */
+.el-table thead {
+  color: #000 !important;
+  font-weight: 500;
+}
+
+/* .el-input__inner {
+  display: inline-block;
+  height: 26px;
+  padding-top: 10px;
+} */
+
+/deep/.el-table .table-row {
+  background: rgb(230, 230, 230);
+}
+
+
+/* 按钮的样式 */
+button {
+  display: inline-block;
+  line-height: 12px;
+  background: #000;
+  color: #fff;
+  border: 0;
+  width: 70px;
+  font-size: 12px;
+}
+
+.inputWidth {
+  width: 50%;
+}
+
+.el-table .cell {
+  font-size: 11pt;
+  color: #333;
+}
+
+/* .el-tag:hover {
+  cursor: pointer !important;
+} */
