@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包需要注意的</title>
+</head>
+
+<body>
+
+    <script>
+        // function foo() {
+
+        //     var arr = []
+
+        //     for (var index = 0; index < 10; index++) {
+        //         arr[index] = function () {
+        //             console.log(index)
+        //             return index;
+        //         }
+        //     }
+        //     return arr;
+        // }
+
+        // var arr = foo()
+        // console.log(arr);
+        // console.log(arr[1]());
+
+        // function foo() {
+        //     var arr = []
+        //     for (var index = 0; index < 10; index++) {
+        //         arr[index] = (function (n) {
+        //             return function () {
+        //                 return n
+        //             };
+        //         })(index)
+        //     }
+        //     return arr;
+        // }
+
+        // var arr = foo()
+        // console.log(arr);
+        // console.log(arr[1]());
+
+        function foo() {
+            var arr = []
+            for (var index = 0; index < 10; index++) {
+                (function (n) {
+                    arr[n] = function () {
+                        return n
+                    }
+                })(index)
+            }
+            return arr;
+        }
+
+        var arr = foo()
+        console.log(arr);
+        console.log(arr[1]());
+        console.log(arr[2]());
+        console.log(arr[3]());
+        console.log(arr[4]());
+    </script>
+</body>
+
+</html>

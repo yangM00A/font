@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10种闭包的常用方式</title>
+</head>
+
+<body>
+    <ol>
+        <li>返回值（将内部的变量传递到外部来）</li>
+        <li>函数赋值（将内部的函数赋值给外部的变量）</li>
+        <li>函数参数</li>
+        <li>IIFE(函数自调用)</li>
+        <li>循环赋值</li>
+        <li>getter,setter</li>
+        <li>迭代器</li>
+        <li>首次区分</li>
+        <li>缓存机制</li>
+        <li>Img对象图片上报</li>
+    </ol>
+
+</body>
+
+<script>
+    // 返回值
+    // function count() {
+    //     var num = 0;
+    //     return function () {
+    //         return ++num
+    //     }
+    // }
+
+    // var myCount = count()
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+
+    // 函数赋值，将内部的函数赋值给外部的变量
+    // var fn2;
+    // var fn = function () {
+    //     var name = "yang"
+    //     var a = function () {
+    //         return name
+    //     }
+    //     fn2 = a
+    // }
+
+    // fn()
+    // console.log(fn2())
+
+    // 函数参数：将内部的函数当做一个参数，传递给另外一个函数
+    // function fn(f) {
+    //     console.log(f())
+    // }
+
+    // function fn2() {
+    //     var name = "yangmeng"
+    //     var fn1 = function () {
+    //         return name;
+    //     }
+    //     fn(fn1)
+    // }
+    // fn2()
+
+    // IIFE(函数自调用)
+    //  function fun3(fn){
+    //    console.log( fn())
+    //  }
+
+    // (function(){
+    //     var name = "yang123"
+    //     var fn = function(){
+    //         return name;
+    //     }
+    //     fun3(fn)
+    // })()
+
+</script>
+
+</html>

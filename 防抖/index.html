@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+
+<body>
+    <input type="button" value="点击" id="myBtn">
+</body>
+
+<script>
+    var button = document.getElementById('myBtn')
+
+    // 付钱
+    function payMoney(money) {
+        console.log("我付钱了...", money)
+    }
+
+    /**
+     * 描述 防抖函数
+     * @date 2021-04-12
+     * @param {any} func:要执行的函数
+     * @param {any} time：时间间隔
+     * @returns {any}
+     */
+    function debounce(func, money, time) {
+        let status = null;
+        return function () {
+            let _this = this
+            clearTimeout(status)
+            status = setTimeout(() => {
+                func.apply(_this, [money])
+                // func(money)
+            }, time);
+        }
+    }
+
+
+    button.addEventListener('click', debounce(payMoney, 8000, 1000))
+</script>
+
+</html>

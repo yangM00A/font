@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包002-延长对象寿命</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * 描述：这段代码在运行时，发现在一些低版本浏览器上存在bug，会丢失部分数据上报，
+         * 原因是img是report函数中的局部变量，当report函数调用结束后，img对象随即被销毁，
+         * 而此时可能还没来得及发出http请求，所以此次请求就会丢失。
+         * @date 2021-04-12
+         * @param {any} src
+         * @returns {any}
+         */
+        var report = function (src) {
+            var image = new Image();
+            image.src = src;
+        }
+
+        report("http://www.baidu.com")
+    </script>
+
+</body>
+
+</html>

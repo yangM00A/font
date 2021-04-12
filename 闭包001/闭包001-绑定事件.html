@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的使用</title>
+</head>
+
+<body>
+    <button>Button0</button>
+    <button>Button1</button>
+    <button>Button2</button>
+    <button>Button3</button>
+    <button>Button4</button>
+</body>
+
+<script>
+    // 1.绑定事件
+    var eleArr = document.getElementsByTagName('button')
+    // for (let index = 0; index < eleArr.length; index++) {
+    //     const element = eleArr[index];
+
+    //     element.onclick = function () {
+    //         console.log(index)
+    //     }
+    // }
+
+
+    for (let index = 0; index < eleArr.length; index++) {
+        const element = eleArr[index];
+
+        !(function (index) {
+            element.onclick = function () {
+                console.log(index)
+            }
+        })(index);
+    }
+
+    
+
+
+</script>
+
+</html>
