@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10种闭包的常用方式</title>
+</head>
+
+<body>
+    <ol>
+        <li>返回值（将内部的变量传递到外部来）</li>
+        <li>函数赋值（将内部的函数赋值给外部的变量）</li>
+        <li>函数参数</li>
+        <li>IIFE(函数自调用)</li>
+        <li>循环赋值</li>
+        <li>getter,setter</li>
+        <li>迭代器</li>
+        <li>首次区分</li>
+        <li>缓存机制</li>
+        <li>Img对象图片上报</li>
+    </ol>
+
+</body>
+
+<script>
+    // 返回值
+    // function count() {
+    //     var num = 0;
+    //     return function () {
+    //         return ++num
+    //     }
+    // }
+
+    // var myCount = count()
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+    // console.log(myCount());
+
+    // 函数赋值，将内部的函数赋值给外部的变量
+    // var fn2;
+    // var fn = function () {
+    //     var name = "yang"
+    //     var a = function () {
+    //         return name
+    //     }
+    //     fn2 = a
+    // }
+
+    // fn()
+    // console.log(fn2())
+
+    // 函数参数：将内部的函数当做一个参数，传递给另外一个函数
+    // function fn(f) {
+    //     console.log(f())
+    // }
+
+    // function fn2() {
+    //     var name = "yangmeng"
+    //     var fn1 = function () {
+    //         return name;
+    //     }
+    //     fn(fn1)
+    // }
+    // fn2()
+
+    // IIFE(函数自调用)
+    //  function fun3(fn){
+    //    console.log( fn())
+    //  }
+
+    // (function(){
+    //     var name = "yang123"
+    //     var fn = function(){
+    //         return name;
+    //     }
+    //     fun3(fn)
+    // })()
+
+    // 循环赋值(2中写法)
+
+    // var arr = []
+
+    // function fun() {
+    //     for (var index = 0; index < 10; index++) {
+    //         arr[index] = (function (index) {
+    //             return function(){
+    //                 return index
+    //             };
+    //         })(index)
+    //     }
+    // }
+    // fun()
+    // console.log(arr[2]())
+
+    // var arr = []
+
+    // function fun() {
+    //     for (var index = 0; index < 10; index++) {
+    //         arr[index] = (function (index) {
+    //             return function () {
+    //                 return index
+    //             }
+    //         })(index)
+    //     }
+    // }
+    // fun()
+    // console.log(arr[3]())
+
+    // get set 方法封装私有变量
+
+    // var getValue, setValue;
+    // (function () {
+    //     var name = "yang"
+
+    //     getValue = function () {
+    //         return name;
+    //     }
+
+    //     setValue = function (v) {
+    //         name = v;
+    //     }
+    // })()
+
+    // console.log(getValue());
+    // setValue('hello world')
+    // console.log(getValue())
+
+    // 计数器
+    // var a = function () {
+    //     var num = 0;
+    //     return function () {
+    //         return ++num;
+    //     }
+    // }
+    // var fun = a()
+    // console.log(fun())
+    // console.log(fun())
+
+    // 迭代器（每调用一次，返回一个数据）
+
+    // var arr = ['Jack', 'Tom', 'Yang']
+
+    // function getItem() {
+    //     var item = 0;
+    //     return function (arr) {
+    //         return arr[item++]
+    //     }
+    // }
+    // var fun = getItem()
+    // console.log(fun(arr))
+    // console.log(fun(arr))
+    // console.log(fun(arr))
+
+
+    // 首次调用
+    // var first = (function () {
+    //     var list = []
+    //     return function (id) {
+    //         if (list.indexOf(id) > -1) {
+    //             return false
+    //         } else {
+    //             list.push(id)
+    //             return true
+    //         }
+    //     }
+    // })()
+    // console.log(first(10))
+    // console.log(first(10))
+    // console.log(first(20))
+    // console.log(first(30))
+
+    // 缓存 （比如计算求和，如果已经有了，就不再重新计算，直接从缓存中获取）
+    var count = function () {
+        // 存放缓存
+        var cache = {};
+        // 计算结果
+        var calculate = function () {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+            console.log(sum)
+            return sum
+        }
+
+        return function () {
+
+            // 转换key
+            var key = Array.prototype.join.call(arguments, ',')
+            console.log(cache);
+            if (key in cache) {
+                // 直接返回缓存数据
+                return cache[key]
+            }
+            cache[key] = calculate.apply(null, arguments)
+            return cache[key]
+        }
+
+    }()
+    count(10, 20, 30)
+    count(10, 20, 32)
+    count(10, 20, 30)
+    // console.log()
+</script>
+
+</html>
