@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的调用</title>
+</head>
+
+<body>
+    <ol>
+        <li>函数调用</li>
+        <li>方法调用</li>
+        <li>构造调用</li>
+        <li>间接调用</li>
+    </ol>
+
+</body>
+
+<script>
+    // 函数调用
+    function sum(a, b) {
+        // 在非严格模式下，this指向window对象
+        // 严格模式下this指向 undefined
+        console.log(this);
+        return a + b
+    }
+    var val = sum(1, 2)
+    console.log(val)
+
+    // 方法调用 （给对象使用）
+
+    var obj = {
+        fn: function () {
+            console.log(2)
+        }
+    }
+
+    obj.fn()
+
+    //构造函数调用 
+    function myFun() {
+        this.a = 1
+    }
+
+    var obj = new myFun() //等价于 var obj = new myFun;
+    console.log(obj, obj.a)
+
+    // 间接调用模式
+
+    function sum(x, y) {
+        // 如果是直接的函数调用，this指向window对象
+        // 如果是对象调用，this指向当前的对象 如：apply，call
+        console.log(this)
+        return x + y
+    }
+    console.log(sum.call(null, 1, 2))
+    console.log(sum.apply(null, [1, 2]))
+    myObj = {
+        a: 5
+    }
+    console.log(sum.call(myObj, 1, 2))
+    console.log(sum.apply(myObj, [1, 2]))
+</script>
+
+</html>

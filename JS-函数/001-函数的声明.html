@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的声明</title>
+</head>
+
+<body>
+
+    <script>
+        // 1.函数声明语句
+        function fn(a, b, c) {
+
+        }
+
+        // 2.1函数表达式
+        var hello = function () {
+
+        }
+        // 2.2函数表达式
+        var fun = function myFun() {
+            // myFun 只能在函数的内部使用
+        }
+
+        //3. Function 构造函数,下面两个函数相同
+
+        var fn = new Function('return 5');
+
+        function fn() {
+            return 5
+        }
+    </script>
+
+</body>
+
+</html>
