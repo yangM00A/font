@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call(),apply()</title>
+</head>
+
+<body>
+    <h3>call()和 apply()方法的应用</h3>
+    <h4>apply()第二个参数是数组</h4>
+    <h4>在 JavaScript 严格模式下，如果 apply() 方法的第一个参数不是对象，则它将成为被调用函数的所有者（对象）。在“非严格”模式下，它成为全局对象。</h4>
+    <ol>
+        <li>找出数组中的最大元素（需要利用Math.max()）</li>
+        <li>将类数组转换为真正的数组</li>
+        <li>数组追加</li>
+        <li>使用call()和 apply()做继承</li>
+        <li>使用log()代理console.log()</li>
+    </ol>
+</body>
+
+<script>
+    // 找出数组中的最大值
+    // var arr = [2, 4, 9, 10, 1, 30, 4, 20]
+    // var maxnumber = Math.max.apply(null, arr)
+    // console.log(maxnumber)
+
+
+    // 将伪数组装换为正真的数组
+    // function add() {
+    //     console.log(arguments)
+    //     var arr = Array.prototype.slice.apply(arguments)
+    //     console.log(arr)
+    // }
+    // add(1, 2, 3, 6)
+
+    // 给数组追加元素
+    // var arr = []
+    // Array.prototype.push.apply(arr, [1, 2, 3, 5])
+    // console.log(arr)
+    // Array.prototype.push.apply(arr, [10, 20])
+    // console.log(arr)
+
+    // 使用call()和 apply()做继承
+    // function Animal(name, age) {
+    //     this.name = name
+    //     this.age = age
+    //     this.say = function () {
+    //         console.log(this.name, this.age)
+    //     }
+    // }
+
+    // function Cat(name,age) {
+    //     Animal.call(this,name,age)
+    // }
+
+    // var cat = new Cat('小黑',10);
+    // cat.say()
+
+    // 代理log
+    // function log(param) {
+    //     console.log.call(console,param)
+    // }
+    // log("hello world")
+</script>
+
+</html>

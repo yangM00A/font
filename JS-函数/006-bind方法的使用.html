@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind方法的使用</title>
+</head>
+
+<body>
+    <p>
+        bind 方法，可以将一个方法绑定到一个对象上，并且返回这个函数（具体使用有函数柯里化）
+    </p>
+
+</body>
+<script>
+    function count(x, y) {
+        console.log(x + y)
+    }
+    var obj = {
+        x: 10
+    }
+    var gn = count.bind(obj)
+    gn(10, 20)
+
+    // 函数柯里化
+    function config(color, size, other) {
+        console.log(color, size, other);
+    }
+
+    var fn = config.bind(null, 'red', '180')
+    fn('hello')
+    fn('world')
+</script>
+
+</html>
