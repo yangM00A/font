@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h1>{{ this.$store.state.name }}</h1>
-    <h1>{{ this.$store.state.age }}</h1>
+    <h2>{{ name}}</h2>
+    <h3>{{ age }}</h3>
     <span>{{username}}</span>
     <button @click='deleteParam'>删除</button>
     <button @click="getUserName">获取用户信息</button>
@@ -16,27 +16,37 @@ export default {
   props: {
     msg: String,
   },
-  data(){
+  data() {
     return {
-      username:null,
-    }
+      username: null,
+    };
   },
-  created(){
-    this.$store.commit('edit',{name:'Jack'})
-    this.$store.commit('add',{age:15})
+  created() {
+    this.$store.commit("edit", { name: "Jack" });
+    this.$store.commit("add", { age: 15 });
   },
-  methods:{
-    deleteParam(){
-      console.log('删除');
-      this.$store.commit('delete')
+
+  computed: {
+    name() {
+      return this.$store.state.userInfo.name;
     },
-    getUserName(){
-      this.username = this.$store.getters.getUserName
+
+    age() {
+      return this.$store.state.userInfo.age;
     },
-    httpClick(){
-      this.$store.dispatch('httpResp',{name:'yangmeng'})
-    }
-  }
+  },
+  methods: {
+    deleteParam() {
+      console.log("删除");
+      this.$store.commit("delete");
+    },
+    getUserName() {
+      this.username = this.$store.getters.getUserName;
+    },
+    httpClick() {
+      this.$store.dispatch("httpResp", { name: "yangmeng" });
+    },
+  },
 };
 </script>
 
