@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        .recommends-content-item{
+    width: 33%;
+    height: 280px;
+    margin-right: 1rem;
+    /* height: 15rem; */
+    background: #eee;
+    position: relative;
+}
+			.recommends-content-item:hover .recommends-content-item__info{
+    opacity: 1;
+    transform:  translateY(0);
+}
+.recommends-content-item__info{
+    position: absolute;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(34,34,34,0.35);
+    padding: 0 0.5rem;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.3s;
+    transform:  translateY(100%);
+}
+    </style>
+</head>
+
+<body>
+    <li class="recommends-content-item">
+        <img src="./manage.png" alt="">
+        <div class="recommends-content-item__info">
+            <h3 class="ellipsis">标题1</h3>
+            <p class="ellipsis">描述描述描述描述描描述描述描述描述描述描述描述描述描</p>
+        </div>
+    </li>
+</body>
+
+</html>
