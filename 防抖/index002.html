@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖测试</title>
+</head>
+
+<body>
+    如果页面变换将出现弹窗
+</body>
+
+<script>
+    function debounce(fn, time) {
+        let id = null;
+        return function () {
+            if (id) {
+                clearTimeout(id)
+            }
+            id = setTimeout(fn, time)
+        }
+    }
+
+    function alertMessage() {
+       alert(Math.random())
+    }
+    window.addEventListener('resize', debounce(alertMessage, 1000))
+</script>
+
+</html>
